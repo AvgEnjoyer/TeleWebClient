@@ -1,0 +1,41 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+<div class="post">
+    
+    <div class="post-meta">
+        <div class="post-id">{{ post.id }}</div>
+        <div class="post-date">{{ post.date }}</div>
+    </div>
+    <div class="post-media">
+        <ng-container *ngFor="let mediaFile of post.mediaFiles; let i = index">
+            <ng-container [ngSwitch]="mediaFile.type">
+                <ng-container *ngSwitchCase="'image'">
+                    <img src="{{mediaFile.url}}" class="post-image" [ngStyle]="getImageStyle(i)" (click)="showFullImage(mediaFile.url)">
+                </ng-container>
+                <ng-container *ngSwitchCase="'video'">
+                <!-- HTML code for video type -->
+                </ng-container>
+                <!-- Add more cases for other types as needed -->
+            </ng-container>
+        </ng-container>
+    </div>
+    <div class="post-title">{{ post.text }}</div>
+    <div class="post-interactions">
+        <div class="like" (click)="like(post.id)">
+            <i class="fas fa-thumbs-up"></i> Like
+        </div>
+        <div class="dislike" (click)="dislike(post.id)">
+            <i class="fas fa-thumbs-down"></i> Dislike
+        </div>
+        <div class="comments" (click)="viewComments(post.id)">
+            <i class="fas fa-comments"></i> Comments
+        </div>
+        <div class="share" (click)="share(post.id)">
+            <i class="fas fa-share"></i> Share
+        </div>
+    </div>
+</div>
+
+<div class="full-image-container" (click)="hideFullImage()">
+    <img src=""class="full-image">
+</div>

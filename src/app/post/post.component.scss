@@ -1,0 +1,91 @@
+/* post.component.css */
+
+.post {
+    background-color: #ede4ff; 
+    display: flex;
+    flex-direction: column;
+    align-items: baseline;
+    //gap: 5px;
+    padding: 10px;
+    border: 2px solid #463765;
+    width: 500px;
+    max-width: 800px;
+    border-radius: 15px;
+    box-sizing: border-box; /* Include padding and border in width calculation */
+}
+.post .post-title {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #1f103d;
+    font-weight:500;
+}
+
+.post-interactions {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 600;
+    width: 100%;
+    display: flex;
+    justify-content:space-around;
+    margin-top: 10px; /* Add desired margin top value */
+    box-sizing: border-box; /* Include padding and border in width calculation */
+}
+.post-interactions .dislike {
+    flex-grow: 0.7; /* Add flex-grow property to adjust spacing */
+}
+
+.post-interactions i{
+    color: #4600c9;
+}
+.post-meta{
+    display: none;
+}
+
+.post-media {
+    /* Media container styles */
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Wrap media files to next line if they exceed container width */
+    margin-bottom: 8px; /* Add margin to the top for spacing between post content and media files */
+    gap: 0.8%;
+    
+}
+/* PostComponent styles */
+.post-image,
+.post-video {
+    border-radius: 2%;
+    border: #463765 3px solid;
+    
+    /* Image styles */
+    height:auto; /* Maintain aspect ratio of image */
+    margin: 0 0 0.8% 0; /* Add margin between images */
+    /* Additional styles for image as needed */
+    box-sizing: border-box;
+    object-fit: cover; 
+}
+.post-image:hover,
+.full-image:hover
+{
+    cursor:pointer;
+}
+
+
+
+
+
+.full-image-container {
+    display: none; /* initially hide the container */
+    position: fixed; /* fix the position of the container */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* add a semi-transparent black background */
+    z-index: 9999; /* set a high z-index to ensure the container is on top of other elements */
+    justify-content: center; /* center the content horizontally */
+    align-items: center; /* center the content vertically */
+    overflow: auto; /* enable scrolling if the image is larger than the viewport */
+  }
+  
+  .full-image {
+    max-width: 90%; /* set a maximum width for the image */
+    max-height: 90vh; /* set a maximum height for the image */
+    object-fit: contain; /* maintain aspect ratio of the image */
+  }

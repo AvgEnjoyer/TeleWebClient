@@ -1,0 +1,85 @@
+.channel-box {
+    /* Add styles for the parent container of .channel */
+}
+
+.channel {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    /* Add styles for .channel */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: fixed;
+    padding: 10px;
+    margin-left: 60px; /* Use margin-left: auto to push it to the rightmost side */
+    margin-top: 30px;
+    border: 2px solid #000;
+    border-radius: 10px;
+    background-color: #bbc7fd;
+    width: 350px;
+    box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.2); /* Add box shadow with horizontal offset, vertical offset, blur radius, and color */
+    
+}
+.section{
+    background-color: #d0defc;
+    flex: 1;
+    text-align: center;
+    border: 1px solid #000; /* Add border to create table-like cells */
+    border-radius: 10px;
+    padding: 10px; /* Add padding for cell content */
+}
+header {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center; /* Align items vertically at the bottom of the header */
+    /* Add spacing between the image and title */
+    
+}
+
+.subscribers{
+    font-weight: 300;
+    font-size:small;
+}
+
+.info {
+    text-align:start;/* Add styles for the title element */
+    font-size: 18px; /* Set font size */
+    font-weight: bold; /* Set font weight */
+    margin-bottom: 10px; /* Add bottom margin */
+}
+
+img {
+    /* Add styles for the image element */
+    width: 60px; /* Set a fixed width */
+    height: 60px; /* Set a fixed height */
+    border-radius: 50%; /* Set border radius to create a circular shape */
+    border: #000 3px solid;
+    object-fit: cover; /* Scale the image to cover the entire area */
+    
+}
+
+
+.links {
+    /* Add styles for the links container */
+    display: flex; /* Display links container as flex */
+    flex-direction: column; /* Set flex direction to column */
+    gap: 5px; /* Add spacing between links */
+}
+
+.tusername {
+    /* Add styles for the tusername element */
+    font-size: 14px; /* Set font size */
+    font-weight: bold; /* Set font weight */
+}
+
+.global-link {
+    /* Add styles for the global-link element */
+    font-size: 12px; /* Set font size */
+    color: #777; /* Set text color */
+}
+
+.about {
+    /* Add styles for the about element */
+    font-size: 14px; /* Set font size */
+    line-height: 1.4; /* Set line height */
+} 
