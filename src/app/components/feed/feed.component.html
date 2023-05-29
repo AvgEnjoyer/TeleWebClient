@@ -1,0 +1,18 @@
+<div class="row">
+  <app-sub-list></app-sub-list>
+<div class="feed">
+
+  <div *ngIf="!isAdmin">
+    <form (submit)="submitPost()">
+      <textarea [(ngModel)]="newPostContent" placeholder="Enter your post content"></textarea>
+      <input type="file" (change)="handleFileInput($event)">
+      <button type="submit" [disabled]="!newPostContent">Post</button>
+    </form>
+  </div>
+    <!-- Display posts using *ngFor -->
+    <div *ngFor="let postItem of posts">
+        <!-- Render PostComponent with post data as input -->
+        <app-post [post]="postItem"></app-post>
+    </div>
+</div>
+</div>

@@ -1,0 +1,18 @@
+<div class="channel-box"> <!--*ngIf="channels && channels.length > 0">-->
+  <div class="channel">
+    <header class="section">
+      <img src="https://wallpapercave.com/wp/wp2550666.jpg">
+      <div class="info">
+        <div class = "title">{{activeChannel.name}}</div>
+        <div class = "subscribers">{{activeChannel.subscribers}} subscribers</div>
+      </div>
+    </header>
+    <div class="section">
+      <div class="links">
+        <div class = "tusername">username</div>
+        <div class = "global-link">http://localhost:4200/c/{{activeChannelId}}</div>
+      </div>
+    </div>
+    <div class = "about section">{{activeChannel.description}}</div>
+  </div>
+</div>

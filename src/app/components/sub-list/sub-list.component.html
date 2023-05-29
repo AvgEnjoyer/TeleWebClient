@@ -1,0 +1,30 @@
+<div class="channel-list">
+
+  <div class="dropdown" [class.show]="isAuthorized">
+    <button class="dropdown-toggle" type="button" id="channelDropdown" (click)="toggleDropdown()" [class.show]="isDropdownOpen">
+      Channels
+    </button>
+    <div class="dropdown-menu" aria-labelledby="channelDropdown" [class.show]="isDropdownOpen">
+      <a class="dropdown-item" *ngFor="let channel of subscriptions" [routerLink]="'/c/' + channel.id">{{ channel.name }}</a>
+      <div class="dropdown-item"  [class.show]="isCreatePressed">
+        <div (click)="toggleCreate()" class="channel-button">+ Add Channel</div>
+        <form (ngSubmit)="createChannel()" #createChannelForm="ngForm" class="dropdown-item create-channel-form" [class.show]="isCreatePressed">
+          <div>
+            <label for="name">Name:</label>
+          </div>
+          <div>
+            <input type="text" id="name" name="name" [(ngModel)]="createChannelDTO.name" required>
+          </div>
+          <div>
+            <label for="description">Description:</label>
+          </div>
+          <div>
+            <input type="text" id="description" name="description" [(ngModel)]="createChannelDTO.description">
+          </div>
+          <button type="submit" [disabled]="!createChannelForm.form.valid">Create Channel</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+

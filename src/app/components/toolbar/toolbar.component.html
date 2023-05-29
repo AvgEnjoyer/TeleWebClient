@@ -1,0 +1,16 @@
+<header class="toolbar">
+  <div class="logo">My App</div>
+  <div class="search">
+    <input #searchBox type="text" placeholder="Search..." (keyup.enter)="searchBox.value && goToChannel(searchBox.value)">
+    <button (click)="goToChannel(searchBox.value)">Search</button>
+  </div>
+  <div class="menu">
+    <a routerLink="/">Home</a>
+    <a routerLink="/profile">Profile</a>
+    <a routerLink="/settings">Settings</a>
+  </div>
+</header>
+
+
+
+

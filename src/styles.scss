@@ -5,3 +5,6 @@ body {
     background-color: #e7dcff;
     /* Reset margin to 0 to avoid spacing issues */
   }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

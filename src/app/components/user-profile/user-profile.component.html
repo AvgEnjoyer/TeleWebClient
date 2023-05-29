@@ -1,0 +1,73 @@
+<div *ngIf="!isAuthorized" class="auth-container">
+    <div class="button-container">
+      <button type="button" (click)="showLoginForm()" [disabled]="activeLogin">Login</button>
+      <button type="button" (click)="showSignUpForm()" [disabled]="!activeLogin">Sign up</button>
+    </div>
+
+    <div *ngIf="activeLogin" class="form-container">
+      <form (ngSubmit)="login()" #loginForm="ngForm">
+        <div>
+          <label for="username">Username or Email:</label>
+        </div>
+        <div>
+          <input type="text" id="usernameOrEmail" name="usernameOrEmail" [(ngModel)]="credentials.UserNameOrEmail" required>
+        </div>
+        <div>
+          <label for="password">Password:</label>
+        </div>
+        <div>
+          <input type="password" id="loginPassword" name="loginPassword" [(ngModel)]="credentials.Password" required>
+        </div>
+        <button type="submit" [disabled]="!loginForm.form.valid">Login</button>
+      </form>
+      <button type="button" routerLink="/profile/forgotPassword">Forgot Password</button>
+    </div>
+
+    <div *ngIf="!activeLogin" class="form-container">
+      <form (ngSubmit)="register()" #registerForm="ngForm">
+        <div>
+          <label for="name">Name:</label>
+        </div>
+        <div>
+          <input type="text" id="name" name="name" [(ngModel)]="registerData.Name" required>
+        </div>
+        <div>
+          <label for="username">Username:</label>
+        </div>
+        <div>
+          <input type="text" id="username" name="username" [(ngModel)]="registerData.UserName" required>
+        </div>
+        <div>
+          <label for="email">Email:</label>
+        </div>
+        <div>
+          <input type="email" id="email" name="email" [(ngModel)]="registerData.Email" required>
+        </div>
+        <div>
+          <label for="password">Password:</label>
+        </div>
+        <div>
+          <input type="password" id="password" name="password" [(ngModel)]="registerData.Password" required>
+        </div>
+        <div>
+          <label for="confirmPassword">Confirm Password:</label>
+        </div>
+        <div>
+          <input type="password" id="confirmPassword" name="confirmPassword" [(ngModel)]="registerData.ConfirmPassword" required>
+        </div>
+        <div>
+          <label for="dateOfBirth">Date of Birth:</label>
+        </div>
+        <div>
+          <input type="date" id="dateOfBirth" name="dateOfBirth" [(ngModel)]="registerData.DateOfBirth" required>
+        </div>
+        <button type="submit" [disabled]="!registerForm.form.valid">Sign up</button>
+      </form>
+    </div>
+</div>
+
+<div *ngIf="isAuthorized" class="profile-container">
+  <h2>Welcome to your profile</h2>
+  <button type="submit" (click)="logout()">Log Out</button>
+  <!-- Profile content here -->
+</div>

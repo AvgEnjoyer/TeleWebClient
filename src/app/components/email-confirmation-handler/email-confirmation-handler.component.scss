@@ -1,0 +1,28 @@
+.container {
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.container label {
+  color: #151515;
+  font-weight: bold;
+}
+
+.container input {
+  background-color: #cedffc;
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #696969;
+}
+.container button {
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #007bff;
+  color: #fff;
+  cursor: pointer;
+}
