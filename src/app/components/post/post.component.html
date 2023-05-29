@@ -1,13 +1,13 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
 <div class="post">
-    
+
     <div class="post-meta">
         <div class="post-id">{{ post.id }}</div>
         <div class="post-date">{{ post.date }}</div>
     </div>
     <div class="post-media">
-        <ng-container *ngFor="let mediaFile of post.mediaFiles; let i = index">
+        <ng-container *ngFor="let mediaFile of post.mediaFileDTOs; let i = index">
             <ng-container [ngSwitch]="mediaFile.type">
                 <ng-container *ngSwitchCase="'image'">
                     <img src="{{mediaFile.url}}" class="post-image" [ngStyle]="getImageStyle(i)" (click)="showFullImage(mediaFile.url)">
@@ -22,10 +22,10 @@
     <div class="post-title">{{ post.text }}</div>
     <div class="post-interactions">
         <div class="like" (click)="like(post.id)">
-            <i class="fas fa-thumbs-up"></i> Like
+            <i class="fas fa-thumbs-up"></i> {{post.likes}}
         </div>
         <div class="dislike" (click)="dislike(post.id)">
-            <i class="fas fa-thumbs-down"></i> Dislike
+            <i class="fas fa-thumbs-down"></i> {{post.dislikes}}
         </div>
         <div class="comments" (click)="viewComments(post.id)">
             <i class="fas fa-comments"></i> Comments

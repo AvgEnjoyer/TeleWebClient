@@ -2,12 +2,12 @@
   <app-sub-list></app-sub-list>
 <div class="feed">
 
-  <div *ngIf="!isAdmin">
-    <form (submit)="submitPost()">
+  <div *ngIf="isAdmin" class="create-post-form">
+    <div class="create-form">
       <textarea [(ngModel)]="newPostContent" placeholder="Enter your post content"></textarea>
-      <input type="file" (change)="handleFileInput($event)">
-      <button type="submit" [disabled]="!newPostContent">Post</button>
-    </form>
+      <input type="file" id="fileInput" (change)="handleFileInput($event)">
+      <button type="submit" (click)="submitPost()" [disabled]="!newPostContent">Post</button>
+    </div>
   </div>
     <!-- Display posts using *ngFor -->
     <div *ngFor="let postItem of posts">

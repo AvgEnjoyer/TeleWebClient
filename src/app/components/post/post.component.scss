@@ -1,11 +1,10 @@
 /* post.component.css */
 
 .post {
-    background-color: #ede4ff; 
+    background-color: #ede4ff;
     display: flex;
     flex-direction: column;
     align-items: baseline;
-    //gap: 5px;
     padding: 10px;
     border: 2px solid #463765;
     width: 500px;
@@ -45,20 +44,20 @@
     flex-wrap: wrap; /* Wrap media files to next line if they exceed container width */
     margin-bottom: 8px; /* Add margin to the top for spacing between post content and media files */
     gap: 0.8%;
-    
+
 }
 /* PostComponent styles */
 .post-image,
 .post-video {
     border-radius: 2%;
     border: #463765 3px solid;
-    
+
     /* Image styles */
     height:auto; /* Maintain aspect ratio of image */
     margin: 0 0 0.8% 0; /* Add margin between images */
     /* Additional styles for image as needed */
     box-sizing: border-box;
-    object-fit: cover; 
+    object-fit: cover;
 }
 .post-image:hover,
 .full-image:hover
@@ -83,7 +82,7 @@
     align-items: center; /* center the content vertically */
     overflow: auto; /* enable scrolling if the image is larger than the viewport */
   }
-  
+
   .full-image {
     max-width: 90%; /* set a maximum width for the image */
     max-height: 90vh; /* set a maximum height for the image */

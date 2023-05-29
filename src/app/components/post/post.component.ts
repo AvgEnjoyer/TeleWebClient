@@ -1,5 +1,5 @@
-import { Component, Inject, Input } from '@angular/core';
-import { Post } from '../../models/post/post.interface';
+import { Component, Input } from '@angular/core';
+import {GetPostDTO} from "../../models/post/post.interface";
 
 @Component({
   selector: 'app-post',
@@ -7,7 +7,7 @@ import { Post } from '../../models/post/post.interface';
   styleUrls: ['./post.component.scss']
 })
 export class PostComponent {
-  @Input() post!: Post; // Assuming post is an object with the required properties
+  @Input() post!: GetPostDTO; // Assuming post is an object with the required properties
 
   like(postId: string) {
     // Implementation for upvote/like logic
@@ -27,7 +27,7 @@ export class PostComponent {
     console.log('Sharing:', postId);
   }
   getImageStyle(index: number) {
-    const numImages = this.post.mediaFiles.length;
+    const numImages = this.post.mediaFileDTOs.length;
     const remainder = numImages % 3;//!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     if (index === 0 && remainder === 1)
     {

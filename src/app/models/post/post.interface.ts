@@ -1,11 +1,16 @@
 export interface PostMediaFile {
-    type: string;
-    url: string;
+  url: string;
+  type: string;
 }
 
-export interface Post {
-    id: string;
+export interface UpdatePostDTO {
     text: string;
+    mediaFileDTOs: PostMediaFile[];
+}
+export interface GetPostDTO extends UpdatePostDTO{
+    id: string;
+    likes: number;
+    dislikes: number;
     date: Date;
-    mediaFiles: PostMediaFile[];
+    mediaFileDTOs: PostMediaFile[];
 }

@@ -4,6 +4,7 @@ import { Observable } from 'rxjs';
 import {GetChannelDTO, UpdateChannelDTO} from '../../models/channel/channel.interface'
 import {ApiResponse} from "../../models/api-response/api-response.interface";
 import {DataApiResponse} from "../../models/api-response/data-api-response";
+import {GetPostDTO, UpdatePostDTO} from "../../models/post/post.interface";
 @Injectable({
   providedIn: 'root'
 })
@@ -23,6 +24,13 @@ export class ChannelService {
   createChannel(createChannelDTO: UpdateChannelDTO) : Observable<DataApiResponse<GetChannelDTO>>
   {
     return this.http.post<DataApiResponse<GetChannelDTO>>(`${this.baseUrl}/channel`, createChannelDTO);
+  }
+
+  addPost(activeChannelId: string, post: UpdatePostDTO): Observable<DataApiResponse<GetPostDTO>> {
+    return this.http.post<DataApiResponse<GetPostDTO>>(`${this.baseUrl}/channel/${activeChannelId}/post`, post);
+  }
+  getPosts(activeChannelId: string): Observable<DataApiResponse<GetPostDTO[]>> {
+    return this.http.get<DataApiResponse<GetPostDTO[]>>(`${this.baseUrl}/channel/${activeChannelId}/post`);
   }
 }
 

@@ -1,6 +1,5 @@
-import {Component, Input} from '@angular/core';
+import {Component} from '@angular/core';
 import {GetChannelDTO, UpdateChannelDTO} from "../../models/channel/channel.interface";
-import {Post} from "../../models/post/post.interface";
 import {UserService} from "../../services/user/user.service";
 import {AuthService} from "../../services/auth/auth.service";
 import {ChannelService} from "../../services/channel/channel.service";

@@ -1,11 +1,8 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import { BlobServiceClient } from '@azure/storage-blob';
-import {firebaseConfig} from '../../../../firebaseConfig';
-import {GetChannelDTO, UpdateChannelDTO} from "../../models/channel/channel.interface";
+import {GetChannelDTO} from "../../models/channel/channel.interface";
 import {ChannelService} from "../../services/channel/channel.service";
 import {UserService} from "../../services/user/user.service";
-import {Post} from "../../models/post/post.interface";
 import {AuthService} from "../../services/auth/auth.service";
 
 @Component({
