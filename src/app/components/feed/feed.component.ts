@@ -1,4 +1,4 @@
-import { Component, Input} from '@angular/core';
+import {ChangeDetectionStrategy, Component, Input, OnChanges} from '@angular/core';
 import {ChannelService} from "../../services/channel/channel.service";
 import {BlobServiceClient} from "@azure/storage-blob";
 import {firebaseConfig} from "../../../../firebaseConfig";
@@ -48,9 +48,9 @@ const post: GetPostDTO = {
 @Component({
   selector: 'app-feed',
   templateUrl: './feed.component.html',
-  styleUrls: ['./feed.component.scss']
+  styleUrls: ['./feed.component.scss'],
 })
-export class FeedComponent{
+export class FeedComponent implements OnChanges{
 
   @Input() isAdmin: boolean = false;
   @Input()  activeChannelId?: string;
@@ -71,7 +71,7 @@ export class FeedComponent{
   private file: File | undefined;
 
   constructor(private channelService: ChannelService) { }
-  ngOnInit(): void {
+  ngOnChanges(): void {
     if (this.activeChannelId) {
       this.channelService.getPosts(this.activeChannelId).subscribe(response => {
         this.posts = response.data;

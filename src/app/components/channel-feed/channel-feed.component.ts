@@ -14,9 +14,6 @@ import {AuthService} from "../../services/auth/auth.service";
 
 export class ChannelFeedComponent{
   activeChannelId: string='';
-
-  subscribedChannels: GetChannelDTO[] = [];
-
   isAdmin: boolean=false;
   activeChannel :GetChannelDTO= {id: '', name:'notfound',description:'notfound', subscribers:0 };
 
@@ -33,10 +30,10 @@ export class ChannelFeedComponent{
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       this.activeChannelId = params['channelId'];
+      this.isAuthorized = this.authService.isLoggedIn();
+      if(this.isAuthorized)
+        this.getActiveChannelDTO(this.activeChannelId);
     });
-    this.isAuthorized = this.authService.isLoggedIn();
-    if(this.isAuthorized)
-      this.getActiveChannelDTO(this.activeChannelId);
   }
 
 
